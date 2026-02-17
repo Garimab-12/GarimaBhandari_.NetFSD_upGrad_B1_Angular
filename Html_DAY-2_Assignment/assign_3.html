@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>E-Learning Certification Portal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- ========= HEADER == -->
+    <header>
+        <h1>SkillUp Academy</h1>
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Courses</a> |
+            <a href="#">Certifications</a> |
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- =======MAIN CONTENT ===== -->
+    <main>
+
+        <!-- ===== INTRODUCTION VIDEO SECTION ===== -->
+        <section>
+            <h2>Program Introduction</h2>
+
+            <video controls width="600" poster="poster.jpg">
+                <source src="comp_video.mp4" type="video/mp4">
+                <source src="comp_video.mp4" type="video/webm">
+
+                <!-- Subtitles -->
+                <track src="subtitles.vtt"
+                       kind="subtitles"
+                       srclang="en"
+                       label="English"
+                       default>
+
+                Your browser does not support the video tag.
+            </video>
+        </section>
+
+        <!-- ===== REGISTRATION FORM SECTION ===== -->
+        <section>
+            <h2>Course Registration Form</h2>
+
+            <!-- Enrollment Progress -->
+            <label>Enrollment Progress:</label>
+            <progress value="50" max="100"></progress>
+            <br><br>
+
+            <form action="#" method="post">
+
+                <!-- Student Name -->
+                <label for="name">Full Name:</label><br>
+                <input type="text" id="name" name="name"
+                       placeholder="Enter your full name"
+                       required><br><br>
+
+                <!-- Email -->
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"
+                       placeholder="example@email.com"
+                       required><br><br>
+
+                <!-- Course Selection (Auto-suggestions) -->
+                <label for="course">Select Course:</label><br>
+                <input list="courses" id="course"
+                       name="course"
+                       placeholder="Start typing course name"
+                       required>
+
+                <datalist id="courses">
+                    <option value="Full Stack Web Development">
+                    <option value="Data Science Certification">
+                    <option value="Artificial Intelligence">
+                    <option value="Cloud Computing">
+                    <option value="Cyber Security">
+                </datalist>
+                <br><br>
+
+                <!-- Batch Selection (Month Input) -->
+                <label for="batch">Select Batch Month:</label><br>
+                <input type="month" id="batch" name="batch" required><br><br>
+
+                <!-- Session Timing (Time Input) -->
+                <label for="session">Preferred Session Time:</label><br>
+                <input type="time" id="session" name="session" required><br><br>
+
+                <!-- Skill Rating (Range) -->
+                <label for="skill">Rate Your Skill Level (1-10):</label><br>
+                <input type="range" id="skill" name="skill"
+                       min="1" max="10" step="1" required><br>
+                <small>1 = Beginner | 10 = Expert</small><br><br>
+
+                <button type="submit">Enroll Now</button>
+
+            </form>
+        </section>
+
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <address>
+            SkillUp Academy<br>
+            Email: support@skillupacademy.com<br>
+            Phone: +91 9876543210
+        </address>
+        <p>&copy; 2026 SkillUp Academy. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

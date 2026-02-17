@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CityCare Hospital | Appointment Booking</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+    <header>
+        <h1>CityCare Hospital</h1>
+        <nav>
+            <a href="#">Home</a> |
+            <a href="#">Departments</a> |
+            <a href="#">Doctors</a> |
+            <a href="#">Contact</a>
+        </nav>
+    </header>
+
+    <!-- ================= MAIN SECTION ================= -->
+    <main>
+        <section>
+            <h2>Book Your Appointment</h2>
+
+            <form action="#" method="post" enctype="multipart/form-data">
+
+                <!-- Full Name -->
+                <label for="fullname">Full Name:</label><br>
+                <input type="text" id="fullname" name="fullname"
+                       placeholder="Enter your full name"
+                       required minlength="3"><br><br>
+
+                <!-- Age (Only valid numbers) -->
+                <label for="age">Age:</label><br>
+                <input type="number" id="age" name="age"
+                       min="0" max="120"
+                       required><br><br>
+
+                <!-- Phone (Exactly 10 digits) -->
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone"
+                       pattern="[0-9]{10}"
+                       maxlength="10"
+                       placeholder="Enter 10 digit mobile number"
+                       required><br><br>
+
+                <!-- Email (Automatic validation) -->
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email"
+                       placeholder="example@email.com"
+                       required><br><br>
+
+                <!-- Department (Suggestions while typing) -->
+                <label for="department">Department:</label><br>
+                <input list="departments" id="department"
+                       name="department"
+                       placeholder="Type department name"
+                       required>
+
+                <datalist id="departments">
+                    <option value="Cardiology">
+                    <option value="Neurology">
+                    <option value="Orthopedics">
+                    <option value="Pediatrics">
+                    <option value="Dermatology">
+                    <option value="General Medicine">
+                </datalist>
+                <br><br>
+
+                <!-- Doctor (Custom entry allowed) -->
+                <label for="doctor">Preferred Doctor:</label><br>
+                <input list="doctors" id="doctor"
+                       name="doctor"
+                       placeholder="Select or type doctor name"
+                       required>
+
+                <datalist id="doctors">
+                    <option value="Dr. Sharma">
+                    <option value="Dr. Mehta">
+                    <option value="Dr. Reddy">
+                    <option value="Dr. Khan">
+                </datalist>
+                <br><br>
+
+                <!-- Appointment Date -->
+                <!-- (HTML only cannot auto-block past date without JS) -->
+                <label for="date">Appointment Date:</label><br>
+                <input type="date" id="date" name="date" required><br><br>
+
+                <!-- Appointment Time -->
+                <label for="time">Preferred Time:</label><br>
+                <input type="time" id="time" name="time" required><br><br>
+
+                <!-- Emergency Checkbox -->
+                <label>
+                    <input type="checkbox" name="emergency">
+                    Emergency Case
+                </label>
+                <br><br>
+
+                <!-- Medical Reports Upload (Multiple files allowed) -->
+                <label for="reports">Upload Medical Reports:</label><br>
+                <input type="file" id="reports"
+                       name="reports"
+                       accept=".pdf,.jpg,.png"
+                       multiple><br><br>
+
+                <button type="submit">Book Appointment</button>
+
+            </form>
+        </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+    <footer>
+        <address>
+            CityCare Hospital<br>
+            45 Health Street, Delhi, India<br>
+            Phone: +91 9876543210
+        </address>
+        <p>&copy; 2026 CityCare Hospital. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
