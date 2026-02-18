@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digital Banking Account Opening</title>
+</head>
+
+<body>
+
+<header>
+    <h1>Online Savings Account Opening</h1>
+</header>
+
+<main>
+    <form action="#" method="post" enctype="multipart/form-data">
+
+        <fieldset>
+            <legend>Personal Details</legend>
+
+            <label for="fullname">Full Name:</label>
+            <input type="text" id="fullname" name="fullname"
+                   required minlength="3"><br><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email"
+                   required><br><br>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone"
+                   pattern="[0-9]{10}"
+                   placeholder="10 digit number"
+                   required><br><br>
+
+            <label for="dob">Date of Birth:</label>
+            <!-- Age minimum 18 (example for 2026) -->
+            <input type="date" id="dob" name="dob"
+                   max="2008-12-31"
+                   required><br><br>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Banking Details</legend>
+
+            <label for="pan">PAN Number:</label>
+            <input type="text" id="pan" name="pan"
+                   pattern="[A-Z]{5}[0-9]{4}[A-Z]"
+                   placeholder="ABCDE1234F"
+                   required><br><br>
+
+            <label for="ifsc">IFSC Code:</label>
+            <input type="text" id="ifsc" name="ifsc"
+                   pattern="[A-Za-z]{4}[0-9]{7}"
+                   placeholder="SBIN0001234"
+                   required><br><br>
+
+            <label for="account">Account Type:</label>
+            <input list="accountTypes" id="account" name="account" required>
+
+            <datalist id="accountTypes">
+                <option value="Savings Account">
+                <option value="Salary Account">
+                <option value="Student Account">
+                <option value="Senior Citizen Account">
+            </datalist>
+            <br><br>
+
+            <label for="income">Monthly Income:</label>
+            <input type="number" id="income" name="income"
+                   min="0"
+                   step="1000"
+                   placeholder="Enter amount in INR"
+                   required><br><br>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Document Upload</legend>
+
+            <label for="idproof">Upload ID Proof:</label>
+            <input type="file" id="idproof" name="idproof"
+                   accept=".pdf,.jpg,.png"
+                   required><br><br>
+
+        </fieldset>
+
+        <button type="submit">Submit Application</button>
+
+    </form>
+</main>
+
+<footer>
+    <p>© 2026 Digital Bank. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
