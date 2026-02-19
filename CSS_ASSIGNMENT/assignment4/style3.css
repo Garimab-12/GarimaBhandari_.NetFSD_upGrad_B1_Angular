@@ -1,0 +1,131 @@
+/* Universal Box Model */
+* {
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    margin: 0;
+    display: flex;
+}
+
+.sidebar {
+    width: 220px;
+    background-color: #00264d;
+    color: white;
+    padding: 20px;
+    height: 100vh;
+}
+
+h1 {
+    margin: 0;
+}
+
+.sidebar ul li {
+    list-style: none;
+    padding: 10px 0;
+}
+
+
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+
+header {
+    background-color: #e6f0ff;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.summary-section {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+
+.card {
+    flex: 1;
+    border: 2px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+}
+
+
+h2, h3 {
+    color: #003366;
+}
+
+
+.transactions table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.transactions th, .transactions td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+}
+
+
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+
+.debit {
+    color: red;
+    font-weight: bold;
+}
+
+.credit {
+    color: green;
+    font-weight: bold;
+}
+
+
+#login {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #e6f0ff;
+}
+
+
+input[type="password"] {
+    padding: 10px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #003366;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #003366;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button:active {
+    background-color: #001a33;
+}
+
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    padding: 10px;
+}

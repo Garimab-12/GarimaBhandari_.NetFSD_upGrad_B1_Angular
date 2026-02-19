@@ -1,0 +1,91 @@
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f9ff;
+    color: #333;
+}
+
+
+h1, h2, h3 {
+    color: #0066cc;
+}
+
+
+header {
+    background-color: #cce6ff;
+    padding: 20px;
+    text-align: center;
+}
+
+nav a {
+    margin: 0 15px;
+    text-decoration: none;
+    color: #004080;
+    font-weight: bold;
+}
+
+
+.banner {
+    background-color: #e6f2ff;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0073e6;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: #004080;
+}
+
+
+.services {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.services p {
+    color: #555;
+}
+
+
+.service-card {
+    padding: 20px;
+    margin: 15px;
+    border: 2px solid #0073e6;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+
+#contact {
+    padding: 40px 20px;
+    background-color: #e6f2ff;
+    text-align: center;
+}
+
+
+input[type="text"] {
+    padding: 10px;
+    width: 250px;
+    border: 1px solid #0073e6;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color: #cce6ff;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
