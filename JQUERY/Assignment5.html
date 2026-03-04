@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 5 - AJAX Basics</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 40px; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background: #f2f2f2; }
+        #loader { display: none; font-weight: bold; }
+        input { padding: 6px; width: 250px; }
+        button { padding: 6px 12px; margin-left: 5px; }
+    </style>
+</head>
+<body>
+
+<h2>User List</h2>
+
+<input type="text" id="searchInput" placeholder="Search by name...">
+<button id="loadBtn">Load Users</button>
+
+<div id="loader">Loading...</div>
+<div id="errorMsg" style="color:red;"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody id="userTable"></tbody>
+</table>
+
+<script>
+$(document).ready(function(){
+
+    let usersData = [];
+
+    $("#loadBtn").click(function(){
+
+        $("#loader").show();
+        $("#errorMsg").text("");
+        $("#userTable").html("");
+
+        $.ajax({
+            url: "https://jsonplaceholder.typicode.com/users",
+            method: "GET",
+            success: function(data){
+                usersData = data;
+                displayUsers(data);
+                $("#loader").hide();
+            },
+            error: function(){
+                $("#loader").hide();
+                $("#errorMsg").text("Failed to load data.");
+            }
+        });
+
+    });
+
+    function displayUsers(users){
+        let rows = "";
+        $.each(users, function(index, user){
+            rows += "<tr>" +
+                        "<td>" + user.name + "</td>" +
+                        "<td>" + user.email + "</td>" +
+                        "<td>" + user.address.city + "</td>" +
+                    "</tr>";
+        });
+        $("#userTable").html(rows);
+    }
+
+    $("#searchInput").on("keyup", function(){
+        let value = $(this).val().toLowerCase();
+        let filtered = usersData.filter(function(user){
+            return user.name.toLowerCase().includes(value);
+        });
+        displayUsers(filtered);
+    });
+
+});
+</script>
+
+</body>
+</html>

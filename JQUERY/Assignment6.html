@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 6 - CRUD JSON Server</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial; margin: 40px; text-align: center; }
+        table { width: 80%; margin: 20px auto; border-collapse: collapse; }
+        th, td { border: 1px solid #ccc; padding: 8px; }
+        th { background: #f2f2f2; }
+        input { padding: 6px; margin: 5px; }
+        button { padding: 6px 12px; margin: 5px; cursor: pointer; }
+        #toast {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: green;
+            color: white;
+            padding: 10px 20px;
+        }
+        #error { color: red; }
+    </style>
+</head>
+<body>
+
+<h2>Book Manager</h2>
+
+<div>
+    <input type="hidden" id="bookId">
+    <input type="text" id="title" placeholder="Book Title">
+    <input type="text" id="author" placeholder="Author">
+    <button id="saveBtn">Save</button>
+</div>
+
+<div id="error"></div>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Author</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody id="bookTable"></tbody>
+</table>
+
+<div id="toast"></div>
+
+<script>
+$(document).ready(function(){
+
+    const API_URL = "http://localhost:3000/books";
+
+    loadBooks();
+
+    function showToast(message){
+        $("#toast").text(message).fadeIn();
+        setTimeout(function(){
+            $("#toast").fadeOut();
+        },2000);
+    }
+
+    function loadBooks(){
+        $.get(API_URL, function(data){
+            let rows = "";
+            $.each(data, function(i, book){
+                rows += `<tr>
+                            <td>${book.id}</td>
+                            <td>${book.title}</td>
+                            <td>${book.author}</td>
+                            <td>
+                                <button class="editBtn" data-id="${book.id}">Edit</button>
+                                <button class="deleteBtn" data-id="${book.id}">Delete</button>
+                            </td>
+                         </tr>`;
+            });
+            $("#bookTable").html(rows);
+        });
+    }
+
+    $("#saveBtn").click(function(){
+
+        let id = $("#bookId").val();
+        let title = $("#title").val().trim();
+        let author = $("#author").val().trim();
+
+        if(title === "" || author === ""){
+            $("#error").text("All fields are required.");
+            return;
+        }
+
+        $("#error").text("");
+
+        let bookData = { title, author };
+
+        if(id){
+            $.ajax({
+                url: API_URL + "/" + id,
+                method: "PUT",
+                contentType: "application/json",
+                data: JSON.stringify(bookData),
+                success: function(){
+                    showToast("Book Updated");
+                    resetForm();
+                    loadBooks();
+                }
+            });
+        } else {
+            $.ajax({
+                url: API_URL,
+                method: "POST",
+                contentType: "application/json",
+                data: JSON.stringify(bookData),
+                success: function(){
+                    showToast("Book Added");
+                    resetForm();
+                    loadBooks();
+                }
+            });
+        }
+    });
+
+    $(document).on("click", ".editBtn", function(){
+        let id = String($(this).data("id"));
+        $.get(API_URL + "/" + id, function(book){
+            $("#bookId").val(book.id);
+            $("#title").val(book.title);
+            $("#author").val(book.author);
+        });
+    });
+
+    $(document).on("click", ".deleteBtn", function(){
+        let id = String($(this).data("id"));
+        if(confirm("Are you sure you want to delete this book?")){
+            $.ajax({
+                url: API_URL + "/" + id,
+                method: "DELETE",
+                success: function(){
+                    showToast("Book Deleted");
+                    loadBooks();
+                }
+            });
+        }
+    });
+
+    function resetForm(){
+        $("#bookId").val("");
+        $("#title").val("");
+        $("#author").val("");
+    }
+
+});
+</script>
+
+</body>
+</html>

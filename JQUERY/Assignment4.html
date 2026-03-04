@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab 4 - jQuery Effects</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial; text-align: center; margin-top: 40px; }
+        #box {
+            width: 150px;
+            height: 150px;
+            background-color: teal;
+            margin: 20px auto;
+            position: relative;
+        }
+        button {
+            margin: 5px;
+            padding: 8px 12px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="box"></div>
+
+<button id="hideBtn">Hide</button>
+<button id="showBtn">Show</button>
+<button id="toggleBtn">Toggle</button>
+<button id="fadeBtn">Fade</button>
+<button id="slideBtn">Slide</button>
+<button id="animateBtn">Animate</button>
+
+<script>
+$(document).ready(function(){
+
+    $("#hideBtn").click(function(){
+        $("#box").hide(500);
+    });
+
+    $("#showBtn").click(function(){
+        $("#box").show(500);
+    });
+
+    $("#toggleBtn").click(function(){
+        $("#box").toggle(500);
+    });
+
+    $("#fadeBtn").click(function(){
+        $("#box").fadeToggle(500);
+    });
+
+    $("#slideBtn").click(function(){
+        $("#box").slideToggle(500);
+    });
+
+    $("#animateBtn").click(function(){
+        $("#box").animate({
+            left: "200px",
+            width: "200px",
+            height: "200px",
+            opacity: 0.5
+        }, 800);
+    });
+
+});
+</script>
+
+</body>
+</html>
+
