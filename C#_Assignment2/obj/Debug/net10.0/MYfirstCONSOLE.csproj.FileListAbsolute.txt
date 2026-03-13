@@ -1,0 +1,14 @@
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\bin\Debug\net10.0\MYfirstCONSOLE.exe
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\bin\Debug\net10.0\MYfirstCONSOLE.deps.json
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\bin\Debug\net10.0\MYfirstCONSOLE.runtimeconfig.json
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\bin\Debug\net10.0\MYfirstCONSOLE.dll
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\bin\Debug\net10.0\MYfirstCONSOLE.pdb
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.GeneratedMSBuildEditorConfig.editorconfig
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.AssemblyInfoInputs.cache
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.AssemblyInfo.cs
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.csproj.CoreCompileInputs.cache
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.dll
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\refint\MYfirstCONSOLE.dll
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.pdb
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\MYfirstCONSOLE.genruntimeconfig.cache
+C:\C#.NET\MYfirstCONSOLE\MYfirstCONSOLE\obj\Debug\net10.0\ref\MYfirstCONSOLE.dll
